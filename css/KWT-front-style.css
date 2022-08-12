@@ -1,0 +1,33 @@
+.kwt_form_subscribe .input_title {
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  padding: 0;
+}
+
+.kwt_form_subscribe .kwt_required {
+  color: #c02b0a;
+  display: inline-block;
+  font-size: 13.008px;
+  padding-left: 0.125em;
+}
+
+.kwt_form_subscribe .kwt_input input {
+  font-size: 15px;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding: 8px;
+  width: 100%;
+}
+.kwt_form_subscribe .item_sub {
+	margin-bottom: 20px;
+}
+
+#program_list {
+	font-size: 15px;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 8px;
+	width: 100%;
+}

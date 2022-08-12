@@ -1,0 +1,81 @@
+.column-color {
+  width: 5%;
+
+  vertical-align: middle !important;
+}
+
+.KWT_post_title {
+  display: flex;
+
+  flex-direction: column;
+}
+
+.KWT_post_ID {
+  font-size: 14px;
+
+  font-weight: 400;
+}
+
+#the-list td {
+  vertical-align: middle;
+}
+
+.program-date {
+  display: flex;
+
+  flex-direction: column;
+}
+
+.program-date .start,
+.program-date .end {
+  font-size: 14px;
+
+  font-weight: 700;
+}
+
+.KWT-status.closed {
+  background-color: rgba(127, 143, 164, 0.1);
+
+  color: #7f8fa4;
+
+  padding: 5px;
+
+  border-radius: 5px;
+}
+
+.KWT-status.opened {
+  background-color: rgba(95, 206, 25, 0.1);
+
+  color: #5fce19;
+
+  padding: 5px;
+
+  border-radius: 5px;
+}
+#eventModal .info {
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+  margin-right: 200px;
+}
+.info h4 {
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 700;
+  margin-right: 10px;
+}
+#calendar {
+  max-width: 95%;
+
+  margin: 0 auto;
+}
+
+.ui-dialog-title {
+  color: #fff;
+}
+.event-title h3 {
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-align: center;
+}
