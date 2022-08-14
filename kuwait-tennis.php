@@ -130,7 +130,8 @@ function programs_ajax()
       "groups" => $groups,
       "levels" => $levels,
       "place_number" => $placeNumber,
-      "map" => $map
+      "map" => $map,
+      "coachID" => $coach->ID
     ];
   }
   echo json_encode($data);
@@ -244,7 +245,7 @@ function kuwait_calendar_output()
       </div>
       <div class="info">
         <h4> Coach :</h4>
-        <label id="coachName"></label>
+        <label data_id="" id="coachName"></label>
       </div>
       <div class="info">
         <h4> Group :</h4>
@@ -263,3 +264,22 @@ function kuwait_calendar_output()
   </div>
 
 <?php }
+add_action( 'wpcf7_before_send_mail', 'save_subscriber_data' );
+function save_subscriber_data( $wpcf7 ) {
+  $title = $_POST['program_title'];
+  $program_id = $_POST['program_id'];
+  $date_now = date("m/d/y");
+  $args = array(
+    'post_type' => 'programs_subscribe',
+    'post_title' => $title,
+    'post_status' => 'publish',
+    'comment_status' => 'closed',   // if you prefer
+    'ping_status' => 'closed',
+  );
+  $post_id =  wp_insert_post($args);
+  add_post_meta($post_id, 'user', '990017', true);
+  add_post_meta($post_id, 'program_subscribe', $program_id, true);
+  add_post_meta($post_id, 'sub_date_start', $date_now, true);
+  add_post_meta($post_id, 'sub_date_end', '09/14/2022', true);
+  add_post_meta($post_id, 'status', '0', true);
+}

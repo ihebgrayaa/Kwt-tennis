@@ -57,7 +57,8 @@ document.addEventListener('DOMContentLoaded', function () {
                         groups: event.groups,
                         levels: event.levels,
                         start_time: event.start_time,
-                        end_time: event.end_time
+                        end_time: event.end_time,
+                        coachID: event.coachID
                     })
                 });
                 var today = new Date();
@@ -90,6 +91,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         jQuery('#eventModal h3').html(info.event.title);
                         jQuery('#placeNumber').html(data.place_number);
                         jQuery('#coachName').html(data.coach);
+                        jQuery('#coachName').attr('data_id', data.coachID);
                         jQuery('#groupName').html(data.groups[0].name);
                         jQuery('#levelsName').html(data.levels[0].name);
                         jQuery('#time').html(data.start_time + ' -> ' + data.end_time);

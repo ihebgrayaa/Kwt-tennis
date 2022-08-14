@@ -46,64 +46,8 @@ global $post;
         <?php
         // echo do_shortcode('[user_registration_form id="1285"]');
 
-        // echo do_shortcode('[contact-form-7 id="1292" title="Subscription"]');
+        echo do_shortcode('[contact-form-7 id="1292" title="Subscription"]');
         ?>
-        <form id="subscriber_form" name="subscriber_form" action="<?php echo esc_url( get_permalink() ); ?>" method="POST">
-            <div class="kwt_form_subscribe">
-                <div class="item_sub">
-                    <label class="input_title" for="fullname"><?php echo esc_html('Full Name') ;?><span class="kwt_required">*</span></label>
-                    <div class="kwt_input">
-                        <input type="text" id="fullname" name="user_fullname" required minlength="4">
-                    </div>
-                </div>
-
-                <div class="item_sub">
-                    <label class="input_title" for="email"><?php echo esc_html('Email') ?><span class="kwt_required">*</span></label>
-                    <div class="kwt_input">
-                        <input type="email" id="email" name="user_email" required>
-                    </div>
-                </div>
-
-                <div class="item_sub">
-                    <label class="input_title" for="user_phone"><?php echo esc_html('Phone') ?><span class="kwt_required">*</span></label>
-                    <div class="kwt_input">
-                        <input data-rules="" data-inputmask="'mask':'(999) 999-9999'" data-id="user_phone" type="tel" value="" class=" ur-frontend-field  ur-masked-input" name="user_phone" id="user_phone" required="required" data-label="Phone">
-                    </div>
-                </div>
-
-                <div class="item_sub">
-                    <label class="input_title" for="user_age"><?php echo esc_html('Age') ?><span class="kwt_required">*</span></label>
-                    <div class="kwt_input">
-                        <input type="number" id="user_age" name="user_age" min="0" max="100" required>
-                    </div>
-                </div>
-                <div class="item_sub">
-                    <label class="input_title program_title" for="program_list">Ladies Tennis Programs<span class="kwt_required">*</span></label>
-                    <div class="kwt_input">
-                        <?php
-                        $args = array(
-                            'post_type' => 'programs',
-                            'post_status' => 'publish',
-                            'posts_per_page' => -1
-                        );
-                        $posts = get_posts($args);
-                        ?>
-                        <select name="program_list" id="program_list" required>
-                            <?php foreach ($posts as $post) { ?>
-                                <option value="<= $post->ID ?>"><?= $post->post_title ?></option>
-                            <?php } ?>
-                        </select>
-                        <input type="hidden" name="product_id" id="productID" value=""/>
-                        <input type="hidden" name="program_title" id="program_title" value=""/>
-                        <input type="hidden" name="program_id" id="program_id" value=""/>
-                    </div>
-                </div>
-
-                <div class="item_sub btn-sub">
-                    <button name="subscriber_form_submit" type="submit" class="btn-submit"><?php echo esc_html('Book now') ?> </button>
-                </div>
-            </div>
-        </form>
     </section>
 
 </article>
